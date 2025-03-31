@@ -1,0 +1,16 @@
+In Little Endian format, the Least Significant Byte (LSByte) always comes first in a multi-byte sample.
+
+Whether it's 8-bit, 16-bit, 24-bit, or 32-bit, the LSByte is always the first byte of each sample in PCM WAV files.
+
+Since you're inverting the Least Significant Bit (LSBit) of the LSByte, you don't need to know how many total bits make up a sample.
+
+But WAV files don't always store audio data at a fixed location because they can contain additional metadata chunks (LIST, cue , etc.).
+
+The data chunk marks the beginning of actual audio samples, so you must scan the file for "data" instead of assuming a fixed offset.
+
+Once you locate data, you can safely apply modifications without touching metadata.
+
+Conclusion
+✅ Bit depth doesn't matter because LSByte is always first in Little Endian.
+✅ Finding data chunk is critical to avoid corrupting the file.
+✅ Your method of blindly modifying LSByte every two bytes (for 16-bit audio) or every four bytes (for 32-bit) will work fine.
