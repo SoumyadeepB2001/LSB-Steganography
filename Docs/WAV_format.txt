@@ -1,3 +1,5 @@
+In audio files, samples are the equivalent of pixels in images. So just like an image is made of pixels, a WAV file is made of samples, and modifying a sample in an audio file is like modifying a pixel in an image. 
+
 In Little Endian format, the Least Significant Byte (LSByte) always comes first in a multi-byte sample.
 
 Whether it's 8-bit, 16-bit, 24-bit, or 32-bit, the LSByte is always the first byte of each sample in PCM WAV files.
