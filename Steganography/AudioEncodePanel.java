@@ -111,8 +111,8 @@ class AudioEncodePanel extends JPanel {
             return;
         }
 
-        // AudioEncode encode = new AudioEncode(msg, cipher, selectedFile);
-        // String encodedFilePath = encode.encode();
-        // lblNewFileLocation.setText(encodedFilePath);
+        AudioEncode encode = new AudioEncode(msg, cipher, selectedFile);
+        String encodedFilePath = encode.encode();
+        lblNewFileLocation.setText(encodedFilePath);
     }
 }
